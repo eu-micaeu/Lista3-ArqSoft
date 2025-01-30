@@ -8,7 +8,7 @@ import (
 )
 
 // Função que simula uma autenticação
-func Auth() {
+func Auth() bool {
 	
 	user := models.User{}
 
@@ -24,9 +24,13 @@ func Auth() {
 
 		fmt.Println("\nUsuário autenticado")
 
+		return true
+
 	} else {
 
 		fmt.Println("\nUsuário ou senha inválidos")
+
+		return false
 
 	}
 

@@ -5,15 +5,23 @@ import (
 	"github.com/eu-micaeu/Lista3-ArqSoft/pck/auth"
 	"github.com/eu-micaeu/Lista3-ArqSoft/pck/catalog"
 	"github.com/eu-micaeu/Lista3-ArqSoft/pck/orders"
-
+	"github.com/eu-micaeu/Lista3-ArqSoft/pck/payments"
 )
 
 func main() {
 
-	auth.Auth()
+	valid := auth.Auth()
 
+	for !valid {
+
+		valid = auth.Auth()
+
+	} 
+		
 	catalog.Catalog()
-
-	orders.Order()
 	
+	orders.Order()
+
+	payments.Payment()
+
 }
