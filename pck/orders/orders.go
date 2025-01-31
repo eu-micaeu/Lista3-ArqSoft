@@ -8,7 +8,7 @@ import (
 )
 
 // Função que simula um pedido
-func Order(produtosDisponiveis []models.Product) {
+func Order(produtosDisponiveis []models.Product) models.Order {
 	// Pedido
 	order := models.Order{}
 
@@ -79,4 +79,18 @@ func Order(produtosDisponiveis []models.Product) {
 		total += produto.Price * float64(produto.Stock)
 	}
 	fmt.Printf("\nTotal do Pedido: R$ %.2f\n", total)
+
+	// Alterar o estado do pedido para "Pendente"
+	order.State = "Pending"
+
+	return order
+}
+
+// Função que simula o pagamento de um pedido
+func PayOrder(order models.Order) models.Order {
+
+	order.State = "Paid"
+
+	return order
+
 }
