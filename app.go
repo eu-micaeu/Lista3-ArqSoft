@@ -18,9 +18,9 @@ func main() {
 
 	} 
 		
-	catalog.Catalog()
+	produtos := catalog.Catalog()
 	
-	orders.Order()
+	orders.Order(produtos)
 
 	payments.Payment()
 

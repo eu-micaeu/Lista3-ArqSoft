@@ -8,19 +8,13 @@ import (
 )
 
 // Função que simula um pedido
-func Order() {
-	// Produtos disponíveis
-	produtosDisponiveis := catalog.Catalog()
-
+func Order(produtosDisponiveis []models.Product) {
 	// Pedido
 	order := models.Order{}
 
 	for {
 		// Exibir todos os produtos disponíveis
-		fmt.Println("\nProdutos disponíveis:")
-		for _, produto := range produtosDisponiveis {
-			fmt.Printf("ID: %d - %s - R$ %.2f - Estoque: %d\n", produto.ID, produto.Name, produto.Price, produto.Stock)
-		}
+		catalog.ShowCatalog(produtosDisponiveis)
 
 		// Pedir para o usuário escolher um produto pelo ID
 		var idEscolhido int
