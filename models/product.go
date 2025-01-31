@@ -8,6 +8,4 @@ type Product struct {
 
 	Price float64
 
-	Stock int
-
 }
